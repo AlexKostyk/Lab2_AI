@@ -5,11 +5,9 @@ def bfs_method(start, end, graph):
     res = []
     queue = deque([start])  # Начальная вершина кладётся в очередь
     visited = {start: None}  # Словарь посещенных вершин
-    cnt = 0
     tmp = end
     while queue:
         cur_node = queue.popleft()  # Пока очередь не пуста достаётся первый элемент
-        cnt += 1
         if cur_node == end:
             break
         next_nodes = graph[cur_node]
@@ -21,5 +19,4 @@ def bfs_method(start, end, graph):
         res.append(tmp)
         tmp = visited[tmp]
 
-    print(visited)
     return res[::-1]
