@@ -1,6 +1,8 @@
 import numpy as np
 from BFS import bfs_method
 from DFS import dfs_method
+from maxDepth import maxdepth_method
+from iterativeDepth import iterative_method
 from auxiliary import make_graph
 
 
@@ -11,7 +13,10 @@ graph = make_graph(city1, city2)
 
 bfs = bfs_method('С.Петербург', 'Житомир', graph)
 dfs = dfs_method('С.Петербург', 'Житомир', graph)
+maxdepth = maxdepth_method('С.Петербург', 'Житомир', graph)
+iterativedepth = iterative_method('С.Петербург', 'Житомир', graph)
 
 print(bfs)
 print(dfs)
-
+print(maxdepth)
+print(iterativedepth)

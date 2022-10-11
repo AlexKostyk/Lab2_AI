@@ -1,13 +1,13 @@
+import collections
+
 
 def bfs_method(start, end, graph):
     visited = [start]
-    cur_node = start
-    count = 0
+    queue = collections.deque([start])
     while end not in visited:
-        queue = graph[cur_node]
-        cur_node = visited[count]
-        count += 1
-        for node in queue:
-            if node not in visited:
-                visited.append(node)
+        cur_node = queue.popleft()
+        for next in graph[cur_node]:
+            if next not in visited:
+                visited.append(next)
+                queue.append(next)
     return visited
