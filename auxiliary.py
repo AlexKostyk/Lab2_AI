@@ -1,13 +1,13 @@
 def make_graph(city1, city2):
     graph = {}
     cities = []
-    for city in city1:
+    for city in city1:  # Объединение city1 с cities
         if city not in cities:
             cities.append(city)
-    for city in city2:
+    for city in city2:  # Объединение city2 с cities
         if city not in cities:
             cities.append(city)
-    for city in cities:
+    for city in cities:  # Перебор всех городов из cities и создание связей в словаре
         array = []
         graph[city] = find_node(city, city1, city2, array)
     return graph
@@ -25,5 +25,3 @@ def find_node(city, city1, city2, array):
             array.append(city1[count])
         count += 1
     return array
-
-

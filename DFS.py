@@ -1,7 +1,5 @@
 
-def dfs_method(start, end, graph, visited=None):
-    if visited is None:
-        visited = []
+def dfs_method(start, end, graph, visited=[]):
     if end in visited:
         return visited
     visited.append(start)
