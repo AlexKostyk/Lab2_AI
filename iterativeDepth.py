@@ -1,6 +1,5 @@
 import maxDepth
 
-
 def iterative_method(start, end, graph, path=[], visited=[]):
     for depth in range(4):
         if end not in path:

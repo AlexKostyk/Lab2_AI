@@ -21,3 +21,4 @@ def greedy_method(start, end, graph):
             if end in visited:
                 break
     return visited
+

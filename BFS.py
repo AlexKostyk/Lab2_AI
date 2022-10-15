@@ -1,6 +1,5 @@
 import collections
 
-
 def bfs_method(start, end, graph):
     visited = [start]
     queue = collections.deque([start])

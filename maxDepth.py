@@ -1,8 +1,6 @@
-
 def maxdepth_method(start, end, graph, maxdepth=5, path=[], visited=[]):
     if depth_loop(start, end, graph, maxdepth, path, visited):
         return path
-
 
 def depth_loop(start, end, graph, maxdepth, path, visited):
     if start == end:

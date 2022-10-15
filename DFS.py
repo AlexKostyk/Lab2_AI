@@ -1,4 +1,3 @@
-
 def dfs_method(start, end, graph, visited=[]):
     if end in visited:
         return visited

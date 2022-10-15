@@ -35,5 +35,4 @@ def bidirectional_method(start, end, graph):
                     vertices.append(next_node)
                 active_node_dict.pop(node, None)
                 visited.add(node)
-
     return visited
