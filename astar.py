@@ -1,4 +1,4 @@
-def greedy_method(start, end, graph):
+def astar_method(start, end, graph, node_cost):
     direct_distance = {'Вильнюс': 543, 'Витебск': 558, 'Воронеж': 754, 'Волгоград': 1156,
                        'Калининград': 740, 'Каунас': 608, 'Киев': 134, 'Житомир': 0,
                        'Кишинев': 359, 'С.Петербург': 1082, 'Москва': 855, 'Мурманск': 2095,
@@ -10,14 +10,22 @@ def greedy_method(start, end, graph):
     min_node = None
     while end not in visited:
         for node in visited:
-            min_distance = 3000
+            min_all_distance = 10000
             for cur_node in graph[node]:
-                if direct_distance[cur_node] < min_distance:
+                if ((direct_distance[cur_node] + find_node_cost(node_cost, node, cur_node)) < min_all_distance) and (
+                        find_node_cost(node_cost, node, cur_node) is not None):
                     if cur_node not in visited:
-                        min_distance = direct_distance[cur_node]
+                        min_all_distance = direct_distance[cur_node] + find_node_cost(node_cost, node, cur_node)
                         min_node = cur_node
             if min_node not in visited:
                 visited.append(min_node)
             if end in visited:
                 break
     return visited
+
+
+def find_node_cost(node_cost, start, end):
+    for i in node_cost:
+        if (i[1] == start and i[2] == end) or (i[2] == start and i[1] == end):
+            return i[0]
+    return None

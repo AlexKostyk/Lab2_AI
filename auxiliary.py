@@ -25,3 +25,12 @@ def find_node(city, city1, city2, array):
             array.append(city1[count])
         count += 1
     return array
+
+
+def node_cost(city1, city2, distance):
+    node_cost = []
+    cnt = 0
+    for dist in distance:
+        node_cost.append([dist, city1[cnt], city2[cnt]])
+        cnt += 1
+    return node_cost
